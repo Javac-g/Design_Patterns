@@ -2,7 +2,7 @@ package com.company.Prototype;
 
 import java.util.ArrayList;
 
-public class ChikenFabric {
+public class ChikenMain {
 
     public static void main(String...args) throws CloneNotSupportedException {
 
