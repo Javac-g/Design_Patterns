@@ -1,4 +1,4 @@
-package com.company.Lab3.Facade;
+package com.company.Lab3.Facade.Example;
 
 public class Main {
     public static  void main(String...args){
