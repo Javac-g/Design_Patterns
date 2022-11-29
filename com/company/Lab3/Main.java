@@ -7,15 +7,18 @@ import com.company.Lab3.Flyweight.CallsFlyweight.View;
 import com.company.Lab3.Proxy.Example.UserDao;
 import com.company.Lab3.Proxy.Example.UserDaoImpl;
 import com.company.Lab3.Proxy.Example.UserDaoProxy;
+import com.company.Lab3.Proxy.ProxyPhone.Call;
+import com.company.Lab3.Proxy.ProxyPhone.CallProxy;
+import com.company.Lab3.Proxy.ProxyPhone.Phone;
 
 
 public class Main {
 
     private static final View  view = new View();
     public static void proxyDemo(){
-        UserDao userDao = new UserDaoImpl();
-        UserDao proxy = new UserDaoProxy(userDao);
-        proxy.save();
+        Call call = new Phone();
+        Call proxy = new CallProxy(call);
+        proxy.makeCall();
     }
     public static void flyweightDemo(){
         CallDirectory callDirectory = new CallDirectory();
