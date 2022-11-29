@@ -11,7 +11,7 @@ public class FlyweightFactory {
         EnglishCharacter ob = characterMap.get(code);
 
         if(ob != null){
-
+            System.out.println("Return " + ob.symbol + " from Flyweight cache");
             return ob;
 
         }
@@ -19,20 +19,19 @@ public class FlyweightFactory {
         switch (code){
             case 1:
                  ob = new CharacterA();
-                characterMap.put(1,ob);
                 break;
             case 2:
                 ob = new CharacterB();
-                characterMap.put(2,ob);
                 break;
             case 3:
                 ob = new CharacterC();
-                characterMap.put(3,ob);
                 break;
             default:
                 System.out.println("Wrong code");
                 return null;
         }
+        characterMap.put(code,ob);
+        System.out.println("Return " + ob.symbol + " from Flyweight cache");
         return ob;
     }
 }
