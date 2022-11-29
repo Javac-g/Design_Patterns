@@ -4,14 +4,19 @@ import com.company.Lab3.Facade.CarFacade.*;
 import com.company.Lab3.Flyweight.CallsFlyweight.CallDirectory;
 import com.company.Lab3.Flyweight.CallsFlyweight.Contact;
 import com.company.Lab3.Flyweight.CallsFlyweight.View;
-import com.company.Lab3.Flyweight.Example.EnglishCharacter;
-import com.company.Lab3.Flyweight.Example.FlyweightFactory;
+import com.company.Lab3.Proxy.Example.UserDao;
+import com.company.Lab3.Proxy.Example.UserDaoImpl;
+import com.company.Lab3.Proxy.Example.UserDaoProxy;
 
-import java.util.Scanner;
 
 public class Main {
-    private final static Scanner sc = new Scanner(System.in);
+
     private static final View  view = new View();
+    public static void proxyDemo(){
+        UserDao userDao = new UserDaoImpl();
+        UserDao proxy = new UserDaoProxy(userDao);
+        proxy.save();
+    }
     public static void flyweightDemo(){
         CallDirectory callDirectory = new CallDirectory();
         int command = -1;
@@ -20,12 +25,13 @@ public class Main {
             switch (command) {
                 case 1 -> {
                     String name = view.setString("Enter Name:");
-                    String number = view.setString("Enter Phone Number");
+                    String number = view.setString("Enter Phone Number:");
                     callDirectory.addContact(name, number);
+                    //callDirectory.addContact(view.setString("Enter Name:"),view.setString("Enter Phone Number"));
 
                 }
                 case 2 -> {
-                    String number = view.setString("Enter phone number of person");
+                    String number = view.setString("Enter phone number of person to find");
                     Contact contact = callDirectory.getContact(number);
 
                     if (contact != null) {
@@ -46,7 +52,8 @@ public class Main {
     }
     public static void main(String...args){
         //facadeDemo();
+
         //flyweightDemo();
-        flyweightDemo();
+        proxyDemo();
     }
 }

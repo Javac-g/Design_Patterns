@@ -16,15 +16,11 @@ public class CallDirectory {
                     case ukr -> new UkrainianContact(name,number);
                     case pol -> new PolishContact(name,number);
                     case spa ->new SpainContact(name, number);
-                    default -> null;
+                    default -> new UndefinedContact(name, number);
         };
 
-        if (contact != null){
-            book.add(contact);
-            System.out.println("Saved contact");
-        }else {
-            System.out.println("Wrong phone number format");
-        }
+        book.add(contact);
+        System.out.println("Saved contact");
 
 
     }
