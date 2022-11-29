@@ -4,6 +4,6 @@ public abstract class EnglishCharacter {
     protected  char symbol;
     protected int width,height;
 
-    protected abstract void print();
+    public abstract void print();
 
 }

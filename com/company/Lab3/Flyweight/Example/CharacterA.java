@@ -8,7 +8,7 @@ public class CharacterA extends EnglishCharacter{
     }
 
     @Override
-    protected void print() {
+    public void print() {
         System.out.println("\nSymbol: "  + symbol + "\nwidth: " + width + "\nheight: " + height);
     }
 }
