@@ -3,6 +3,7 @@ package com.company.Lab3;
 import com.company.Lab3.Facade.CarFacade.*;
 import com.company.Lab3.Flyweight.CallsFlyweight.CallDirectory;
 import com.company.Lab3.Flyweight.CallsFlyweight.Contact;
+import com.company.Lab3.Flyweight.CallsFlyweight.View;
 import com.company.Lab3.Flyweight.Example.EnglishCharacter;
 import com.company.Lab3.Flyweight.Example.FlyweightFactory;
 
@@ -10,28 +11,23 @@ import java.util.Scanner;
 
 public class Main {
     private final static Scanner sc = new Scanner(System.in);
+    private static final View  view = new View();
     public static void flyweightDemo(){
         CallDirectory callDirectory = new CallDirectory();
         int command = -1;
         while(command != 3){
-            System.out.println("Menu: ");
-            System.out.println("1 - add contact");
-            System.out.println("2 - find contact");
-            System.out.println("3 - exit");
-            command = sc.nextInt();
+            command = view.printMenu();
             switch (command) {
                 case 1 -> {
-                    System.out.println("Enter Name:");
-                    String name = sc.next();
-                    System.out.println("Enter Phone Number");
-                    String number = sc.next();
+                    String name = view.setString("Enter Name:");
+                    String number = view.setString("Enter Phone Number");
                     callDirectory.addContact(name, number);
 
                 }
                 case 2 -> {
-                    System.out.println("Enter phone number of person");
-                    String number = sc.next();
+                    String number = view.setString("Enter phone number of person");
                     Contact contact = callDirectory.getContact(number);
+
                     if (contact != null) {
                         contact.print();
                     } else {
