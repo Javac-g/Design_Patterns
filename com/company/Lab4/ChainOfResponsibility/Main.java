@@ -4,22 +4,26 @@ import com.company.Lab4.ChainOfResponsibility.Example.Automate;
 import com.company.Lab4.ChainOfResponsibility.Example.ReExam;
 import com.company.Lab4.ChainOfResponsibility.Example.Student;
 import com.company.Lab4.ChainOfResponsibility.Example.Usual;
+import com.company.Lab4.ChainOfResponsibility.Sushi.*;
 
 public class Main {
     public static void chainDemo(){
 
-        Student student = new Student();
 
-        student.setMark(2);
+        Sushi sushi = new Sushi();
 
-        Automate automate = new Automate(student);
-        Usual usual = new Usual(student);
-        ReExam reExam = new ReExam(student);
+        sushi.setSushiType(SushiType.CALIFORNIA);
 
-        automate.setNext(usual);
-        usual.setNext(reExam);
 
-        automate.executeExam();
+        JapanRecipe japanRecipe = new JapanRecipe(sushi);
+        UkrainRecipe ukrainRecipe = new UkrainRecipe(sushi);
+        UsaRecipe usaRecipe = new UsaRecipe(sushi);
+
+        japanRecipe.setRecipe(ukrainRecipe);
+        ukrainRecipe.setRecipe(usaRecipe);
+
+        japanRecipe.createSushi();
+
     }
     public static void main(String...args){
         chainDemo();
