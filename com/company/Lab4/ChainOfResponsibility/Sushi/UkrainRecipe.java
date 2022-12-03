@@ -9,8 +9,11 @@ public class UkrainRecipe extends Recipe{
     @Override
     public void createSushi() {
         if (sushi.getSushiType().equals(SushiType.KOZACKI)){
+
             sushi.setIngridients(new String[]{"Crab stick", "Sesamum","Cheese"});
+
             System.out.println("Created Ukrainian sushi");
+
         }else {
             getRecipe().createSushi();
         }

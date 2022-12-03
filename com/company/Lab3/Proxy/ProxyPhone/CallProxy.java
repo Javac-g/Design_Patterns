@@ -1,5 +1,7 @@
 package com.company.Lab3.Proxy.ProxyPhone;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -19,8 +21,14 @@ public class CallProxy implements Call{
 
     @Override
     public void makeCall() {
-        System.out.println("Call started: " +SD+ LocalTime.now().getHour()+"Hour,"+LocalTime.now().getMinute()+"Min," + LocalTime.now().getSecond() + "sec" );
+        Instant start = Instant.now();
+        System.out.println("Call started: " + start);
+
         phone.makeCall();
-        System.out.println ("Call ended: " + ED + + LocalTime.now().getHour()+"Hour,"+LocalTime.now().getMinute()+"Min," + LocalTime.now().getSecond() + "sec" );
+
+        Instant end = Instant.now();
+        System.out.println("Call ended: " + end);
+        long elapsed = Duration.between(start,end).toSeconds();
+        System.out.println("CAll duration sec: " + elapsed);
     }
 }

@@ -7,7 +7,7 @@ public class Phone implements Call{
         for(int i = 0 ; i < 10; i++){
             System.out.println("On line: " + i + " sec.");
             try {
-                Thread.sleep(500);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
