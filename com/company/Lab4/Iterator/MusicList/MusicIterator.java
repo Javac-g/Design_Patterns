@@ -6,6 +6,7 @@ import java.util.Iterator;
 public class MusicIterator {
     public static void main(String...args){
         ArrayList<String> compositions = new ArrayList<>();
+
         compositions.add("Adele - Hello");
         compositions.add("Rihanna - Work");
         compositions.add("Alan Walker - Dark side");
@@ -19,10 +20,14 @@ public class MusicIterator {
 
         Iterator<String> iterator = compositions.iterator();
 
-        while (iterator.hasNext()){
-            String song = iterator.next();
-            System.out.println("Played: " + song);
-        }
+            while(iterator.hasNext()){
+
+                String song = iterator.next();
+
+                System.out.println("Played: " + song);
+
+            }
 
     }
+
 }
