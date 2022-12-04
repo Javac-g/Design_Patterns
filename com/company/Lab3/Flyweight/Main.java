@@ -1,26 +1,12 @@
-package com.company.Lab3;
+package com.company.Lab3.Flyweight;
 
-import com.company.Lab3.Facade.CarFacade.*;
 import com.company.Lab3.Flyweight.CallsFlyweight.CallDirectory;
 import com.company.Lab3.Flyweight.CallsFlyweight.Contact;
 import com.company.Lab3.Flyweight.CallsFlyweight.View;
-import com.company.Lab3.Proxy.Example.UserDao;
-import com.company.Lab3.Proxy.Example.UserDaoImpl;
-import com.company.Lab3.Proxy.Example.UserDaoProxy;
-import com.company.Lab3.Proxy.ProxyPhone.Call;
-import com.company.Lab3.Proxy.ProxyPhone.CallProxy;
-import com.company.Lab3.Proxy.ProxyPhone.Phone;
-
 
 public class Main {
-
-    private static final View  view = new View();
-    public static void proxyDemo(){
-        Call call = new Phone();
-        Call proxy = new CallProxy(call);
-        proxy.makeCall();
-    }
-    public static void flyweightDemo(){
+    private static final View view = new View();
+    public static void main(String...args){
         CallDirectory callDirectory = new CallDirectory();
         int command = -1;
         while(command != 3){
@@ -30,7 +16,7 @@ public class Main {
                     String name = view.setString("Enter Name:");
                     String number = view.setString("Enter Phone Number:");
                     callDirectory.addContact(name, number);
-                    //callDirectory.addContact(view.setString("Enter Name:"),view.setString("Enter Phone Number"));
+
 
                 }
                 case 2 -> {
@@ -48,15 +34,5 @@ public class Main {
                 default -> System.out.println("Wrong command");
             }
         }
-
-    }
-    public static void facadeDemo(){
-        new CarFacade(new Engine(),new Gear(),new Wheels(),new ABS()).turnOnCar();
-    }
-    public static void main(String...args){
-        //facadeDemo();
-
-        //flyweightDemo();
-        proxyDemo();
     }
 }
