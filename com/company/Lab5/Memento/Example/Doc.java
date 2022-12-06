@@ -19,11 +19,13 @@ public class Doc {
         );
     }
 
-    public String getText() {
-        return text;
-    }
 
-    public int getStyle() {
-        return style;
+    public DocMemento saveState(){
+        System.out.println("Saving document");
+        return new DocMemento(text,style);
+    }
+    public void restoreState(DocMemento memento){
+        text = memento.getText();
+        style = memento.getStyle();
     }
 }

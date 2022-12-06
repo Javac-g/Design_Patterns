@@ -8,12 +8,15 @@ public class Main {
         myDocument.addBock("Hello");
         myDocument.setStyle(2);
         myDocument.print();
-        DocMemento memento = new DocMemento(myDocument.getText(), myDocument.getStyle());
 
-        history.push(memento.saveState());
+
+        history.push(myDocument.saveState());
 
         myDocument.addBock("Hello");
         myDocument.setStyle(2);
+        myDocument.print();
+
+        myDocument.restoreState(history.pop());
         myDocument.print();
 
 
