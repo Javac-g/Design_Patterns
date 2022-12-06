@@ -6,13 +6,13 @@ public class Main {
 
         EditorHistory history = new EditorHistory();
         myDocument.addBock("Hello");
-        myDocument.setStyle(2);
+        myDocument.setStyle(5);
         myDocument.print();
 
 
         history.push(myDocument.saveState());
 
-        myDocument.addBock("Hello");
+        myDocument.addBock("hi pal");
         myDocument.setStyle(2);
         myDocument.print();
 
