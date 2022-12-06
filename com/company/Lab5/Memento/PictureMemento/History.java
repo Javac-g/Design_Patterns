@@ -6,7 +6,13 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 
 public class History {
+
     private Queue<PictureMemento> history = new ArrayDeque<>();
+
+    public History() {
+
+    }
+
     public void push(PictureMemento memento){
         System.out.println("Saving picture configuration");
         history.offer(memento);
@@ -15,4 +21,5 @@ public class History {
         System.out.println("Canceling last actions");
         return history.poll();
     }
+
 }
