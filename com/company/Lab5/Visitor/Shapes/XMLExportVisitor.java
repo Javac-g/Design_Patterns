@@ -1,6 +1,6 @@
-package com.company.Lab5.Visitor.Example;
+package com.company.Lab5.Visitor.Shapes;
 
-public class XMLExportVisitor implements Visitor{
+public class XMLExportVisitor implements Visitor {
 
     public String export(Shape...args){
         StringBuilder stringBuilder = new StringBuilder();
@@ -15,30 +15,30 @@ public class XMLExportVisitor implements Visitor{
     public String visitDot(Dot dot) {
         return "\t<dot>" + "\n"+
                 "\t<id>" + dot.getId() + "</id>\n"+
-                "\t<x>" + dot.getX() + "</x>\n"+
-                "\t<y>" + dot.getY() + "</y>\n"+
+                "\t<Coordinate x>" + dot.getX() + "</Coordinate x>\n"+
+                "\t<Coordinate y>" + dot.getY() + "</Coordinate y>\n"+
                 "</dot>";
     }
 
     @Override
-    public String visitCircle(Circle circle) {
-        return " \t<circle>" + "\n"+
-                "\t<id>" + circle.getId() + "</id>\n"+
-                "\t<x>" + circle.getX() + "</x>\n"+
-                "\t<y>" + circle.getY() + "</y>\n"+
-                "\t<radius>" + circle.getRadius() + "</radius>\n"+
-                "</circle>";
+    public String visitCircle(Rhombus rhombus) {
+        return " \t<rhombus>" + "\n"+
+                "\t<id>" + rhombus.getId() + "</id>\n"+
+                "\t<side A>" + rhombus.getX() + "</side A>\n"+
+                "\t<side B>" + rhombus.getY() + "</side B>\n"+
+                "\t<side C>" + rhombus.getSideC() + "</side C>\n"+
+                "\t<side E>" + rhombus.getSideE() + "</side E>\n"+
+                "</rhombus>";
     }
 
     @Override
-    public String visitRectangle(Rectangle rectangle) {
-        return "\t<rectangle>" + "\n"+
-                "\t<id>" + rectangle.getId() + "</id>\n"+
-                "\t<x>" + rectangle.getX() + "</x>\n"+
-                "\t<y>" + rectangle.getY() + "</y>\n"+
-                "\t<width>" + rectangle.getWidth() + "</width>\n"+
-                "\t<height>" + rectangle.getHeight() + "</height>\n"+
-                "</rectangle>";
+    public String visitRectangle(Triangle triangle) {
+        return "\t<triangle>" + "\n"+
+                "\t<id>" + triangle.getId() + "</id>\n"+
+                "\t<side A>" + triangle.getSideA() + "</side A>\n"+
+                "\t<side B>" + triangle.getSideB() + "</side B>\n"+
+                "\t<side C>" + triangle.getSideC() + "</side C>\n"+
+                "</triangle>";
     }
     private String _visitCompoundGraphic(CompoundShape cs) {
          StringBuilder sb = new StringBuilder();

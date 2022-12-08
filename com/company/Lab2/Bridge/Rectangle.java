@@ -8,6 +8,6 @@ public class Rectangle extends Shape{
     @Override
     public void draw() {
         color.fillColor();
-        System.out.println("Rectangle ");
+        System.out.println("Triangle ");
     }
 }
