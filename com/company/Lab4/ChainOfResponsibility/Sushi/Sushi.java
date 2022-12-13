@@ -1,6 +1,6 @@
 package com.company.Lab4.ChainOfResponsibility.Sushi;
 
-public class Sushi {
+public abstract class Sushi {
     private String[] ingridients;
     private SushiType sushiType;
 
