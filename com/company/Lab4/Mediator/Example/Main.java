@@ -1,4 +1,4 @@
-package com.company.Lab4.Mediator;
+package com.company.Lab4.Mediator.Example;
 
 public class Main {
     public static void main(String...args){
