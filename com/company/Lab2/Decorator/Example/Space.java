@@ -1,4 +1,4 @@
-package com.company.Lab2.Decorator;
+package com.company.Lab2.Decorator.Example;
 
 public class Space extends Decorator{
     public Space(Component component){

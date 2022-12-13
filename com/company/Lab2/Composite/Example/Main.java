@@ -1,4 +1,4 @@
-package com.company.Lab2.Composite;
+package com.company.Lab2.Composite.Example;
 
 public class Main {
     static public void main(String...args){

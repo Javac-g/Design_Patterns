@@ -1,4 +1,4 @@
-package com.company.Lab2.Bridge;
+package com.company.Lab2.Bridge.Example;
 
 public class Triangle extends Shape{
     public Triangle(Color color) {

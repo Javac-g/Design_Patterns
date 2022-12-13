@@ -1,4 +1,4 @@
-package com.company.Lab2.Adapter;
+package com.company.Lab2.Adapter.Example;
 
 import java.util.LinkedList;
 import java.util.List;

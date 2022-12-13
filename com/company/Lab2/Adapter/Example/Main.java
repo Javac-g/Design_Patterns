@@ -1,4 +1,4 @@
-package com.company.Lab2.Adapter;
+package com.company.Lab2.Adapter.Example;
 
 public class Main {
     public static void main(String...args){

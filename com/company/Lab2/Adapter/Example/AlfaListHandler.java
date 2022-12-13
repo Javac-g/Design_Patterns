@@ -1,4 +1,4 @@
-package com.company.Lab2.Adapter;
+package com.company.Lab2.Adapter.Example;
 
 import java.util.ArrayList;
 import java.util.List;

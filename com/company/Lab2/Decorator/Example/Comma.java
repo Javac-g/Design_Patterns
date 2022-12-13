@@ -1,13 +1,13 @@
-package com.company.Lab2.Decorator;
+package com.company.Lab2.Decorator.Example;
 
-public class Hello extends Decorator{
-    public Hello(Component component) {
+public class Comma extends Decorator{
+    public Comma(Component component) {
         super(component);
     }
 
     @Override
     public void doOperation() {
-        System.out.print("Hello");
+        System.out.print(",");
         super.doOperation();
     }
 

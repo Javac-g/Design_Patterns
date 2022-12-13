@@ -1,4 +1,4 @@
-package com.company.Lab2.Bridge;
+package com.company.Lab2.Bridge.Example;
 
 public class Main {
     public static void main(String...args){

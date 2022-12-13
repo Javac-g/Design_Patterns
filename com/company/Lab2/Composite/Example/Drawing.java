@@ -1,4 +1,4 @@
-package com.company.Lab2.Composite;
+package com.company.Lab2.Composite.Example;
 
 import java.util.ArrayList;
 import java.util.Arrays;
