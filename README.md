@@ -1,6 +1,6 @@
 
 <div id="header">
-  <img src="https://github.com/Javac-g/Generics_practice/blob/master/generics.png?raw=true"/>
+  <img src="https://github.com/Javac-g/Design_Patterns/blob/master/DP.png?raw=true"/>
 </div>
 # ☕ Java Design Patterns
 
